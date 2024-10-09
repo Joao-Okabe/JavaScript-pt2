@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Salário</title>
+</head>
+<body>
+    <script>
+        var encerrar = false;
+
+        while (!encerrar) {
+            var codigo = parseInt(prompt("Digite o código do operário:"));
+            var horasTrabalhadas = parseFloat(prompt("Digite o número de horas trabalhadas:"));
+
+            var salario;
+            var salarioExcedente;
+
+            if (horasTrabalhadas <= 50) {
+                salario = horasTrabalhadas * 10;
+                salarioExcedente = 0;
+            } else {
+                var horasExcedentes = horasTrabalhadas - 50;
+                salario = 50 * 10 + horasExcedentes * 20;
+                salarioExcedente = horasExcedentes * 20;
+            }
+
+            document.write("Salário total do operário: R$ " + salario.toFixed(2) + "<br>");
+            document.write("Salário excedente: R$ " + salarioExcedente.toFixed(2) + "<br>");
+
+            var resposta = prompt("Deseja encerrar o programa? (S/N)").toUpperCase();
+            if (resposta === "S") {
+                encerrar = true;
+            }
+        }
+    </script>
+</body>
+</html>

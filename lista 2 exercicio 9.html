@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Análise de Números</title>
+</head>
+<body>
+    <script>
+        var numerosPares = 0;
+        var numerosImpares = 0;
+        var numerosPositivos = 0;
+        var numerosNegativos = 0;
+        var encerrar = false;
+
+        while (!encerrar) {
+            var numero = parseInt(prompt("Digite um número inteiro:"));
+
+            if (numero % 2 === 0) {
+                numerosPares++;
+            } else {
+                numerosImpares++;
+            }
+
+            if (numero > 0) {
+                numerosPositivos++;
+            } else if (numero < 0) {
+                numerosNegativos++;
+            }
+
+            var resposta = prompt("Deseja encerrar o programa? (S/N)").toUpperCase();
+            if (resposta === "S") {
+                encerrar = true;
+            }
+        }
+
+        document.write("Quantidade de números pares: " + numerosPares + "<br>");
+        document.write("Quantidade de números ímpares: " + numerosImpares + "<br>");
+        document.write("Quantidade de números positivos: " + numerosPositivos + "<br>");
+        document.write("Quantidade de números negativos: " + numerosNegativos);
+    </script>
+</body>
+</html>
